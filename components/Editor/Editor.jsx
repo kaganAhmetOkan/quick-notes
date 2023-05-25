@@ -7,11 +7,12 @@ import { useAtom } from "jotai";
 import { atomNotes } from "@/atoms/notes";
 import { useRouter } from "next/navigation";
 import { updateNotes, getNote } from "@/utils/notes";
+import { pushLocal } from "@/utils/localStorage";
 
 export default function Editor({ noteID }) {
   const [notes, setNotes] = useAtom(atomNotes);
-  const [content, setContent] = useState("# Take your notes here");
-  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [title, setTitle] = useState("New Note");
   const [theme, setTheme] = useState("light");
   const [date, setDate] = useState("");
   const [id, setID] = useState();
@@ -28,8 +29,16 @@ export default function Editor({ noteID }) {
       date: date.toLocaleString("en-US"),
     };
 
-    if (noteID) setNotes(updateNotes(newNote, notes));
-    else setNotes(notes.concat(newNote));
+    if (noteID) {
+      const newNotes = updateNotes(newNote, notes);
+      setNotes(newNotes);
+      pushLocal("notes", newNotes);      
+    }
+    else {
+      const newNotes = notes.concat(newNote);
+      setNotes(newNotes);
+      pushLocal("notes", newNotes);
+    };
 
     router.push("/");
   };
@@ -65,6 +74,7 @@ export default function Editor({ noteID }) {
           placeholder="TITLE"
           value={title}
           onChange={event => setTitle(event.target.value)}
+          autoComplete="off"
         ></input>
         <button type="submit" className={style.button}>Save</button>
       </div>
