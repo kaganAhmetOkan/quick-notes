@@ -11,5 +11,10 @@ export default function Home() {
 };
 
 // TODO
-// store notes in localstorage
-// too many useStates in editor, clean up then into a single useState
+// add theme switch event listener to md-editors
+// stlying changes to all the md-editors
+// add last-written date to md-editor
+
+// BUGS
+// md-previews will not load custom css values when page fast reloads. May be related to prefetching
+// refreshing page whilist editing a note cause the note to not load. Probably because pulling notes from local storage happens in index, not in edit page

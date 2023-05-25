@@ -65,6 +65,7 @@ export default function Editor({ noteID }) {
           type="button"
           className={style.button}
           onClick={() => router.push("/")}
+          data-bg-color="alternative"
         >Discard</button>
         <label htmlFor="new-title" hidden>Title</label>
         <input
@@ -78,13 +79,13 @@ export default function Editor({ noteID }) {
         ></input>
         <button type="submit" className={style.button}>Save</button>
       </div>
-      <label htmlFor="new-content" hidden>Content</label>
+      <label htmlFor="md-editor" hidden>Content</label>
       <MdEditor
         modelValue={content}
         onChange={setContent}
         language="en-US"
         theme={theme}
-        id="new-content"
+        id="md-editor"
       />
       <h4 className={style.date}>{date}</h4>
     </form>

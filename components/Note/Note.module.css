@@ -9,20 +9,13 @@
   text-align: center;
   padding: 5px;
   box-shadow: 4px 4px 0 var(--primary-accent);
+  gap: 0.5rem;
 }
 
 .main > h4 {
   margin: 0;
   font-size: 1.2rem;
   color: var(--secondary-accent);
-}
-
-.main > p {
-  display: flex;
-  flex-grow: 1;
-  padding: 0 1rem;
-  text-align: left;
-  font-size: 0.9rem;
 }
 
 .main > .date {
@@ -54,4 +47,10 @@
   width: 100%;
   justify-content: space-evenly;
   gap: 1rem;
+}
+
+.preview {
+  background-color: inherit;
+  border: 1px solid var(--md-border);
+  flex-grow: 1;
 }

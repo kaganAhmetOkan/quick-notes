@@ -24,6 +24,11 @@
   padding: 0.5rem;
   display: flex;
   flex-grow: 1;
+  transition: 200ms;
+}
+
+.title:focus {
+  background-color: var(--secondary-bg);
 }
 
 .altTitle {
@@ -63,7 +68,11 @@
 }
 
 .button:hover {
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-accent);
+}
+
+.button[data-bg-color= "alternative"]:hover {
+  background-color: var(--primary-accent);
 }
 
 .button:active {
@@ -81,7 +90,15 @@
     background-color: var(--secondary-bg);
   }
 
-  .submit {
+  .button {
     background-color: var(--secondary-bg);
+  }
+
+  .button:hover {
+    background-color: var(--primary-accent);
+  }
+
+  .button[data-bg-color= "alternative"]:hover {
+    background-color: var(--secondary-accent);
   }
 }
