@@ -8,15 +8,22 @@
   height: 100%;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
 .title {
-  border: 1px solid #303030;
+  border: 1px solid var(--md-border);
   outline: none;
   color: var(--foreground);
   background-color: var(--primary-bg);
   font-size: 1.5rem;
-  text-align: center;
   padding: 0.5rem;
-  width: 90%;
+  display: flex;
+  flex-grow: 1;
 }
 
 .altTitle {
@@ -42,4 +49,25 @@
   min-height: 2rem;
   width: 90%;
   word-wrap: normal;
+}
+
+.submit {
+  color: var(--foreground);
+  background-color: transparent;
+  border: 1px solid var(--md-border);
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+@media (prefers-color-scheme: light) {
+  .title {
+    background-color: var(--secondary-bg);
+  }
+
+  .submit {
+    background-color: var(--secondary-bg);
+  }
 }

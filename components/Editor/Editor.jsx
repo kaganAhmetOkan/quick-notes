@@ -17,13 +17,16 @@ export default function Editor() {
 
   return (
     <form className={style.main}>
-      <label htmlFor="new-title" hidden>Title</label>
-      <input
-        id="new-title"
-        name="new-title"
-        className={style.title}
-        placeholder="TITLE"
-      ></input>
+      <div className={style.row}>
+        <label htmlFor="new-title" hidden>Title</label>
+        <input
+          id="new-title"
+          name="new-title"
+          className={style.title}
+          placeholder="TITLE"
+        ></input>
+        <button type="submit" className={style.submit}>Save</button>
+      </div>
       <label htmlFor="new-content" hidden>Content</label>
       <MdEditor
         modelValue={content}
