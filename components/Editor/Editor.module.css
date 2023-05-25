@@ -62,6 +62,12 @@
   transition: 200ms;
 }
 
+.date {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--secondary-accent);
+}
+
 @media (prefers-color-scheme: light) {
   .title {
     background-color: var(--secondary-bg);

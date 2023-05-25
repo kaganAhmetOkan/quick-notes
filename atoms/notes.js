@@ -7,11 +7,4 @@ export const atomNotes = atom([
     content: "Example note content",
     date: "24 May 2023",
   },
-  {
-    title: "Example Note Title",
-    id: 123123123,
-    content: "Example note content",
-    date: "24 May 2023",
-  },
-  
 ]);
