@@ -9,3 +9,8 @@ export default function Home() {
     </main>
   );
 };
+
+// TODO
+// turn off Editor title autocomple
+// store notes in localstorage
+// too many useStates in editor, clean up then into a single useState

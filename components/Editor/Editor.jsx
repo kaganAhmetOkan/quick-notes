@@ -6,13 +6,15 @@ import { useState, useEffect } from "react";
 import { useAtom } from "jotai";
 import { atomNotes } from "@/atoms/notes";
 import { useRouter } from "next/navigation";
-import { updateNotes } from "@/utils/notes";
+import { updateNotes, getNote } from "@/utils/notes";
 
-export default function Editor({ note }) {
-  const [content, setContent] = useState(note?.content ?? "# Take your notes here");
-  const [title, setTitle] = useState(note?.title ?? "");
-  const [theme, setTheme] = useState("light");
+export default function Editor({ noteID }) {
   const [notes, setNotes] = useAtom(atomNotes);
+  const [content, setContent] = useState("# Take your notes here");
+  const [title, setTitle] = useState("");
+  const [theme, setTheme] = useState("light");
+  const [date, setDate] = useState("");
+  const [id, setID] = useState();
   const router = useRouter();
 
   function handleSubmit(event) {
@@ -20,13 +22,13 @@ export default function Editor({ note }) {
 
     const date = new Date();
     const newNote = {
-      id: note?.id ?? date.getTime(),
+      id: id ?? date.getTime(),
       title: title,
       content: content,
       date: date.toLocaleString("en-US"),
     };
 
-    if (note) setNotes(updateNotes(newNote, notes));
+    if (noteID) setNotes(updateNotes(newNote, notes));
     else setNotes(notes.concat(newNote));
 
     router.push("/");
@@ -36,6 +38,14 @@ export default function Editor({ note }) {
     if (window) {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
       else setTheme("light");
+    };
+
+    if (noteID) {
+      const note = getNote(noteID, notes);
+      setTitle(note.title);
+      setContent(note.content);
+      setDate(note.date);
+      setID(note.id);
     };
   }, []);
 
@@ -66,7 +76,7 @@ export default function Editor({ note }) {
         theme={theme}
         id="new-content"
       />
-      <h4 className={style.date}>{note?.date ?? ""}</h4>
+      <h4 className={style.date}>{date}</h4>
     </form>
   )
 };
