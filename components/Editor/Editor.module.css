@@ -51,7 +51,7 @@
   word-wrap: normal;
 }
 
-.submit {
+.button {
   color: var(--foreground);
   background-color: transparent;
   border: 1px solid var(--md-border);
@@ -60,6 +60,14 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: 200ms;
+}
+
+.button:hover {
+  background-color: var(--secondary-bg);
+}
+
+.button:active {
+  transform: scale(0.9);
 }
 
 .date {

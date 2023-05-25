@@ -39,11 +39,19 @@
   width: 100%;
 }
 
-.main > a {
+.clickable {
   color: var(--secondary-accent);
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 0.8rem;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 1rem;
 }

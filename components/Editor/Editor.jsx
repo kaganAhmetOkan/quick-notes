@@ -10,6 +10,7 @@ import { updateNotes } from "@/utils/notes";
 
 export default function Editor({ note }) {
   const [content, setContent] = useState(note?.content ?? "# Take your notes here");
+  const [title, setTitle] = useState(note?.title ?? "");
   const [theme, setTheme] = useState("light");
   const [notes, setNotes] = useAtom(atomNotes);
   const router = useRouter();
@@ -18,8 +19,6 @@ export default function Editor({ note }) {
     event.preventDefault();
 
     const date = new Date();
-    const title = event.target[0].value;
-
     const newNote = {
       id: note?.id ?? date.getTime(),
       title: title,
@@ -43,16 +42,21 @@ export default function Editor({ note }) {
   return (
     <form className={style.main} onSubmit={handleSubmit}>
       <div className={style.row}>
+        <button
+          type="button"
+          className={style.button}
+          onClick={() => router.push("/")}
+        >Discard</button>
         <label htmlFor="new-title" hidden>Title</label>
         <input
           id="new-title"
           name="new-title"
           className={style.title}
           placeholder="TITLE"
-          required
-          defaultValue={note?.title ?? ""}
+          value={title}
+          onChange={event => setTitle(event.target.value)}
         ></input>
-        <button type="submit" className={style.submit}>Save</button>
+        <button type="submit" className={style.button}>Save</button>
       </div>
       <label htmlFor="new-content" hidden>Content</label>
       <MdEditor
