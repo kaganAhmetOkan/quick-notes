@@ -1,0 +1,45 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  border: 1px solid #303030;
+  outline: none;
+  color: var(--foreground);
+  background-color: var(--primary-bg);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  width: 90%;
+}
+
+.altTitle {
+  border: none;
+  border-radius: 2px;
+  color: var(--secondary-accent);
+  background-color: var(--secondary-bg);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
+  width: 80%;
+  box-shadow: 4px 4px 0 var(--primary-accent);
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--secondary-bg);
+  font-size: 1rem;
+  padding: 1.5rem;
+  min-height: 2rem;
+  width: 90%;
+  word-wrap: normal;
+}
