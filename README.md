@@ -4,7 +4,7 @@ A simple and uncomplicated web application to quickly take notes. Similar to app
 
 # Get Started
 
-Visit [quick-notes]() in vercel **(not yet ready)** or run the application in your machine:
+Visit [quick-notes](https://quick-notes-omega.vercel.app/) in vercel or run the application in your machine:
 
 1. `git clone https://github.com/kaganAhmetOkan/quick-notes.git`
 2. `cd quick-notes && yarn`
