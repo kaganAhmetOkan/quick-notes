@@ -17,3 +17,4 @@ export default function Home() {
 
 // BUGS
 // md-previews will not load custom css values when page fast loads. May be related to prefetching
+// some colors don't seem to work in google chrome (confirm this on Windows 10)
