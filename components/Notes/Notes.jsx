@@ -6,11 +6,12 @@ import { atomNotes } from "@/atoms/notes";
 import { removeNote } from "@/utils/notes";
 import { useRouter } from "next/navigation";
 import { pushLocal, pullLocal } from "@/utils/localStorage";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Notes() {
   const router = useRouter();
   const [notes, setNotes] = useAtom(atomNotes);
+  const [theme, setTheme] = useState("light");
 
   const createNote = {
     title: "Create New Note",
@@ -29,12 +30,22 @@ export default function Notes() {
 
   useEffect(() => {
     if (localStorage.getItem("notes")) setNotes(pullLocal("notes"));
+
+    function updateTheme(event) {
+      setTheme(event.matches ? "dark" : "light");
+    };
+
+    setTheme(window.matchMedia("(prefers-color-scheme: dark").matches ? "dark" : "light");
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
+
+    return window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
   }, []);
 
   return (
     <div className={style.main} onClick={event => handleDelete(event)}>
-      {notes.map((note) => <Note note={note} key={note.id}/>)}
-      <Note note={createNote} />
+      {notes.map((note) => <Note note={note} key={note.id} theme={theme} />)}
+      <Note note={createNote} theme={theme} />
     </div>
   );
 };

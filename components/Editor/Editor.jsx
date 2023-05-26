@@ -8,6 +8,7 @@ import { atomNotes } from "@/atoms/notes";
 import { useRouter } from "next/navigation";
 import { updateNotes, getNote } from "@/utils/notes";
 import { pushLocal, pullLocal } from "@/utils/localStorage";
+import Link from "next/link";
 
 export default function Editor({ noteID }) {
   const [notes, setNotes] = useAtom(atomNotes);
@@ -44,6 +45,7 @@ export default function Editor({ noteID }) {
   };
 
   useEffect(() => {
+    // (if window) necessary here??
     if (window) {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
       else setTheme("light");
@@ -69,15 +71,25 @@ export default function Editor({ noteID }) {
     };
   }, []);
 
+  useEffect(() => {
+    function updateTheme(event) {
+      setTheme(event.matches ? "dark" : "light");
+    };
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
+
+    return window.matchMedia("(prefers-color-scheme)").removeEventListener("change", updateTheme);
+  }, []);
+
   return (
     <form className={style.main} onSubmit={handleSubmit}>
       <div className={style.row}>
-        <button
+        <Link
           type="button"
           className={style.button}
-          onClick={() => router.push("/")}
+          href="/"
           data-bg-color="alternative"
-        >Discard</button>
+        >Discard</Link>
         <label htmlFor="new-title" hidden>Title</label>
         <input
           id="new-title"

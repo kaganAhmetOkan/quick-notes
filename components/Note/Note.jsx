@@ -3,21 +3,13 @@ import style from "./Note.module.css";
 import Image from "next/image";
 import iconPlus from "@/public/plus-dark.png";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MdPreview } from "md-editor-rt";
 import "md-editor-rt/lib/preview.css";
 
-export default function Note({ note }) {
+export default function Note({ note, theme }) {
   const [content] = useState(note?.content);
   const [id] = useState(`preview-only-${note.id}`);
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    if (window) {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
-      else setTheme("light");
-    };
-  }, []);
 
   const defaultNote = (
     <div className={style.main} id={note.id}>
