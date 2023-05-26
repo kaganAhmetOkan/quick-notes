@@ -7,7 +7,7 @@ import { useAtom } from "jotai";
 import { atomNotes } from "@/atoms/notes";
 import { useRouter } from "next/navigation";
 import { updateNotes, getNote } from "@/utils/notes";
-import { pushLocal } from "@/utils/localStorage";
+import { pushLocal, pullLocal } from "@/utils/localStorage";
 
 export default function Editor({ noteID }) {
   const [notes, setNotes] = useAtom(atomNotes);
@@ -50,7 +50,18 @@ export default function Editor({ noteID }) {
     };
 
     if (noteID) {
-      const note = getNote(noteID, notes);
+      let note = getNote(noteID, notes);
+      
+      // Handle refresh
+      if (!note) {
+        if (!localStorage.getItem("notes")) {
+          router.push("/");
+          return;
+        };
+
+        note = getNote(noteID, pullLocal("notes"));
+      };
+
       setTitle(note.title);
       setContent(note.content);
       setDate(note.date);

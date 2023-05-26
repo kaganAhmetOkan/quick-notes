@@ -17,4 +17,3 @@ export default function Home() {
 
 // BUGS
 // md-previews will not load custom css values when page fast reloads. May be related to prefetching
-// refreshing page whilist editing a note cause the note to not load. Probably because pulling notes from local storage happens in index, not in edit page
