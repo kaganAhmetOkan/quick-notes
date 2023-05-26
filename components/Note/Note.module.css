@@ -3,26 +3,26 @@
   flex-direction: column;
   align-items: center;
   color: var(--foreground);
-  background-color: var(--secondary-bg);
+  background-color: var(--bg-secondary);
   width: 250px; height: 250px;
-  border: 1px solid var(--primary-accent);
+  border: 1px solid var(--accent-primary);
   border-radius: 8px 2px 2px 2px;
   text-align: center;
   padding: 5px;
-  box-shadow: 4px 4px 0 var(--primary-accent);
+  box-shadow: 4px 4px 0 var(--accent-primary);
   gap: 0.5rem;
 }
 
 .main > h4 {
   margin: 0;
   font-size: 1.2rem;
-  color: var(--secondary-accent);
+  color: var(--accent-secondary);
 }
 
 .main > .date {
   font-size: 0.8rem;
   font-weight: bold;
-  color: var(--secondary-accent);
+  color: var(--accent-secondary);
 }
 
 .main > .image {
@@ -34,7 +34,7 @@
 }
 
 .clickable {
-  color: var(--secondary-accent);
+  color: var(--accent-secondary);
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 1px;

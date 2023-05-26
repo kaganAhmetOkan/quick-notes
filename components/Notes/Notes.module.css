@@ -14,11 +14,11 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: var(--secondary-accent);
-  background-color: var(--secondary-bg);
-  border: 1px solid var(--secondary-accent);
+  color: var(--accent-secondary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--accent-secondary);
   border-radius: 8px 2px 2px 2px;
-  box-shadow: 4px 4px 0 var(--secondary-accent);
+  box-shadow: 4px 4px 0 var(--accent-secondary);
 }
 
 .dialog[data-visible="true"] > h2 {
@@ -41,18 +41,18 @@
   padding: 0.5rem 1.5rem;
   font-weight: bold;
   color: var(--foreground);
-  background-color: var(--secondary-accent);
+  background-color: var(--accent-primary);
   transition: 200ms;
   cursor: pointer;
 }
 
 .row > button:last-child {
-  color: #f2e6d9;
-  background-color: #AA1525;
+  color: var(--foreground);
+  background-color: var(--accent-tertiary);
 }
 
 .row > button:hover {
-  background-color: var(--primary-accent);
+  background-color: var(--accent-secondary);
 }
 
 .row > button:active {

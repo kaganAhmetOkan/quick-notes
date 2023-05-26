@@ -21,7 +21,7 @@
   border: 1px solid var(--md-border);
   outline: none;
   color: var(--foreground);
-  background-color: var(--primary-bg);
+  background-color: var(--bg-primary);
   font-size: 1.5rem;
   padding: 0.5rem;
   display: flex;
@@ -30,19 +30,19 @@
 }
 
 .title:focus {
-  background-color: var(--secondary-bg);
+  background-color: var(--bg-secondary);
 }
 
 .altTitle {
   border: none;
   border-radius: 2px;
-  color: var(--secondary-accent);
-  background-color: var(--secondary-bg);
+  color: var(--accent-secondary);
+  background-color: var(--bg-secondary);
   font-size: 1.5rem;
   text-align: center;
   padding: 0.5rem;
   width: 80%;
-  box-shadow: 4px 4px 0 var(--primary-accent);
+  box-shadow: 4px 4px 0 var(--accent-primary);
 }
 
 .content {
@@ -50,7 +50,7 @@
   flex-grow: 1;
   border: none;
   border-radius: 2px;
-  background-color: var(--secondary-bg);
+  background-color: var(--bg-secondary);
   font-size: 1rem;
   padding: 1.5rem;
   min-height: 2rem;
@@ -73,11 +73,11 @@
 }
 
 .button:hover {
-  background-color: var(--secondary-accent);
+  background-color: var(--accent-secondary);
 }
 
 .button[data-bg-color= "alternative"]:hover {
-  background-color: var(--primary-accent);
+  background-color: var(--accent-primary);
 }
 
 .button:active {
@@ -87,24 +87,24 @@
 .date {
   margin: 0;
   font-size: 1rem;
-  color: var(--secondary-accent);
+  color: var(--accent-secondary);
 }
 
 @media (prefers-color-scheme: light) {
   .title {
-    background-color: var(--secondary-bg);
+    background-color: var(--bg-secondary);
   }
 
   .button {
-    background-color: var(--secondary-bg);
+    background-color: var(--bg-secondary);
   }
 
   .button:hover {
-    background-color: var(--primary-accent);
+    background-color: var(--accent-primary);
   }
 
   .button[data-bg-color= "alternative"]:hover {
-    background-color: var(--secondary-accent);
+    background-color: var(--accent-secondary);
   }
 }
 
