@@ -14,6 +14,7 @@ export default function Home() {
 // stlying changes to all the md-editors
 // add last-written date to md-editor
 // confirm to delete popup
+// remove console.logs
 
 // BUGS
 // md-previews will not load custom css values when page fast loads. May be related to prefetching

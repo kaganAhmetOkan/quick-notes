@@ -5,7 +5,8 @@
   color: var(--foreground);
   background-color: var(--secondary-bg);
   width: 250px; height: 250px;
-  border-radius: 2px;
+  border: 1px solid var(--primary-accent);
+  border-radius: 8px 2px 2px 2px;
   text-align: center;
   padding: 5px;
   box-shadow: 4px 4px 0 var(--primary-accent);

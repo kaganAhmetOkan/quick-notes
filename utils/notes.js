@@ -11,6 +11,5 @@ export function updateNotes(newNote, notes) {
 export function removeNote(noteID, notes) {
   const index = notes.findIndex(note => note.id.toString() === noteID.toString());
   notes.splice(index, 1);
-  console.log(index, notes);
   return notes;
 }

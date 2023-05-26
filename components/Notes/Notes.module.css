@@ -8,3 +8,53 @@
   max-width: calc(100vw - var(--padding) * 2);
   gap: 1rem;
 }
+
+.dialog[data-visible="true"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--secondary-accent);
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--secondary-accent);
+  border-radius: 8px 2px 2px 2px;
+  box-shadow: 4px 4px 0 var(--secondary-accent);
+}
+
+.dialog[data-visible="true"] > h2 {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.row > button {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  border: none;
+  border-radius: 2px;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+  background-color: var(--secondary-accent);
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.row > button:last-child {
+  color: #f2e6d9;
+  background-color: #AA1525;
+}
+
+.row > button:hover {
+  background-color: var(--primary-accent);
+}
+
+.row > button:active {
+  scale: 0.9;
+}
