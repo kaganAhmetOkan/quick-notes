@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A simple and uncomplicated web application to quickly take notes. Similar to applications found in smartphones.
 
-## Getting Started
+---
 
-First, run the development server:
+# Get Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Visit [quick-notes]() in vercel **(not yet ready)** or run the application in your machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. `git clone https://github.com/kaganAhmetOkan/quick-notes.git`
+2. `cd quick-notes && yarn`
+3. `yarn dev`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open [localhost:3000](http://localhost:3000) to see the application in action.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Disclaimer
 
-## Learn More
+The application uses the browser's local storage to store your notes. This means your notes may not persist in the event of:
+- Browser updates
+- Visiting websites that clear local storage
+- Changing browsers
+- OS updates
+- Changing OS
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**You browser is responsible for storing your data.**
