@@ -11,9 +11,9 @@ export default function Home() {
 };
 
 // TODO
-// add theme switch event listener to md-editors
 // stlying changes to all the md-editors
 // add last-written date to md-editor
+// confirm to delete popup
 
 // BUGS
-// md-previews will not load custom css values when page fast reloads. May be related to prefetching
+// md-previews will not load custom css values when page fast loads. May be related to prefetching
