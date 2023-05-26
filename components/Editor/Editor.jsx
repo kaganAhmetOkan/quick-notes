@@ -45,11 +45,7 @@ export default function Editor({ noteID }) {
   };
 
   useEffect(() => {
-    // (if window) necessary here??
-    if (window) {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
-      else setTheme("light");
-    };
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) setTheme("dark");
 
     if (noteID) {
       let note = getNote(noteID, notes);
@@ -78,7 +74,11 @@ export default function Editor({ noteID }) {
 
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
 
-    return window.matchMedia("(prefers-color-scheme)").removeEventListener("change", updateTheme);
+    function removeListeners() {
+      window.matchMedia("(prefers-color-scheme: dark)").removeEventListener("change", updateTheme);
+    };
+
+    return removeListeners;
   }, []);
 
   return (
@@ -109,8 +109,9 @@ export default function Editor({ noteID }) {
         language="en-US"
         theme={theme}
         id="md-editor"
+        placeholder="Notes go here..."
       />
-      <h4 className={style.date}>{date}</h4>
+      <h4 className={style.date}>{`LAST EDIT: ${date}`}</h4>
     </form>
   )
 };
